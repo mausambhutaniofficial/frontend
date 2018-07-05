@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -61,14 +62,14 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
             
-            <li><a href="home">Home</a></li>
-            <li><a href="login">Login</a></li>
-            <li><a href="register">Register</a></li>
-            <li><a href="contactus">ContactUs</a></li>
-            <li><a href="aboutus">AboutUs</a></li>
-            <li><a href="category">Manage Category</a></li>
-           <li><a href="supplier">Supplier</a></li>
-            <li><a href="product">Manage Product</a></li>
+            <li><a href="<c:url value='/home'/>"> Home</a></li>
+            <li><a href="<c:url value='/login'/>">Login</a></li>
+            <li><a href="<c:url value='/register'/>">Register</a></li>
+            <li><a href="<c:url value='/contactus'/>">ContactUs</a></li>
+            <li><a href="<c:url value='/aboutus'/>">AboutUs</a></li>
+            <li><a href="<c:url value='/category'/>">Manage Category</a></li>
+           <li><a href="<c:url value='/supplier'/>">Supplier</a></li>
+            <li><a href="<c:url value='/product'/>">Manage Product</a></li>
             
 
       </ul>

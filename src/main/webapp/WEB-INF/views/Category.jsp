@@ -31,7 +31,7 @@
 	</tr>
 	
 </table>
-
+</form>
 </c:if>
 <c:if test="${!flag}">
 <form action="InsertCatgory" method="post">

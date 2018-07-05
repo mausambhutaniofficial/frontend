@@ -7,7 +7,66 @@
 <body>
 <br><br><br><br><br><br><br>
 <br><br><br><br><br><br><br>
-<form:form action="ProductInsert" modelAttribute="product" method="post">
+
+<%-- <c:if test="${flag}">
+<form:form action="<c:url value='/UpdateProduct'/>" modelAttribute="product" method="post">
+
+<table align="center" cellspacing="3">
+	<tr bgcolor="pink">
+		<center><td colspan="2">Product Manage</td></center>
+	</tr>
+	
+	<tr>
+		<td>Product Name</td>
+		<td><form:input path="prodName"/></td>
+	</tr>
+	
+	<tr>
+		<td>Product Description</td>
+		<td><form:input path="prodDesc"/></td>
+	</tr>
+	
+	<tr>
+		<td>Price</td>
+		<td><form:input path="price"/></td>
+	</tr>	 
+	
+	<tr>
+		<td>Stock</td>
+		<td><form:input path="stock"/></td>
+	</tr>
+	
+	<tr>
+		<td>Category</td>
+			<td><form:select path="categoryId">
+			<form:option value="0" label="--Select list--"/>
+			<form:options items="${categoryList}"/>
+			</form:select>
+		</td>
+	</tr>
+	
+	<tr>
+		<td>Supplier</td>
+		<td><form:select path="suppId">
+		<form:option value="0" label="--Select list--"/>
+			<form:options items="${supplierlist}"/>
+			</form:select></td>
+	</tr>
+	
+	<tr>
+		<td>
+			<center><input type="submit" value="Update"/></center>
+		</td>
+	</tr>
+
+</table>
+</form:form>
+
+</c:if> --%>
+
+<c:if test="${!flag}">
+
+<form:form action="<c:url value='/ProductInsert'/>" modelAttribute="product" method="post">
 
 <table align="center" cellspacing="3">
 	<tr bgcolor="pink">
@@ -59,7 +118,8 @@
 
 </table>
 </form:form>
-
+</c:if>
+<c:if test="${!flag}">
 <table align="center">
 	<tr bgcolor="pink">
 		<td>Product Id</td>
@@ -91,7 +151,7 @@
 </td>
 </tr>
 </c:forEach>
-</table>
+</table></c:if>
 
 
 
