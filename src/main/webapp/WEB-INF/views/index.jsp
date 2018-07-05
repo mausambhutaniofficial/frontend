@@ -1,4 +1,4 @@
-<%@include file="Header.jsp" %>
+<%@include file="/WEB-INF/views/Header.jsp" %>
 
 
 </body>
