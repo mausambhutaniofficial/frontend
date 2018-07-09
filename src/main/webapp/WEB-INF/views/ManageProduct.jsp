@@ -6,7 +6,7 @@
 
 <body>
 <br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br>
+
 
 <%-- <c:if test="${flag}">
 <form:form action="<c:url value='/UpdateProduct'/>" modelAttribute="product" method="post">
@@ -66,11 +66,11 @@
 
 <c:if test="${!flag}">
 
-<form:form action="<c:url value='/ProductInsert'/>" modelAttribute="product" method="post">
+<form:form action="/frontend/ProductInsert" modelAttribute="product" method="post">
 
-<table align="center" cellspacing="3">
+<table align="center" cellspacing="3" class="table">
 	<tr bgcolor="pink">
-		<center><td colspan="2">Product Manage</td></center>
+		<td colspan="2"><center><b>Manage Products</b></center></td>
 	</tr>
 	
 	<tr>
@@ -118,19 +118,29 @@
 
 </table>
 </form:form>
+
+<br>
+<hr>
 </c:if>
 <c:if test="${!flag}">
-<table align="center">
-	<tr bgcolor="pink">
-		<td>Product Id</td>
-		<td>Product Name</td>
-		<td>Product Description</td>
-		<td>Price</td>
-		<td>Stock</td>
-		<td>Category</td>
-		<td>Supplier</td>
-		<td>Operation</td>
-	</tr>
+<div class="container">
+ 
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Product Id</th>
+        <th>Product Name</th>
+        <th>Product Description</th>
+        <th>Price</th>
+        <th>Stock</th>
+        <th>Category</th>
+        <th>Supplier</th>
+        <th>Operation</th>
+        
+      </tr>
+    </thead>
+
+</div>
 	
 	<c:forEach items="${productList}" var="product">
 	

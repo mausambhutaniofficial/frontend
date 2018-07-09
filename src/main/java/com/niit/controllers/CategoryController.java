@@ -31,6 +31,7 @@ public class CategoryController {
 		return "Category";
 	}
 	
+	
 	@RequestMapping(value="/InsertCatgory",method=RequestMethod.POST)
 	public String insertCategory(Model m ,@RequestParam("catname")String categoryName,@RequestParam("catDesc")String categoryDesc){
 		flag=false;

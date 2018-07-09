@@ -41,5 +41,12 @@ public class PageController {
 		
 		return "AboutUs";
 	}
+
+	@RequestMapping(value="/Admin")
+	public String showAdminUs(){
+		
+		return "Admin";
+	}
 	
+
 }

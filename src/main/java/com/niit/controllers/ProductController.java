@@ -43,6 +43,14 @@ public class ProductController {
 		return "ManageProduct";
 	}
 	
+	@RequestMapping(value="/GetProductByCategory/{categoryID}")
+	public String getproductbycategory(@PathVariable("categoryID") int categoryId, Model m){
+		List<Product> listproductbycategory=productDAO.listprodByCategory(categoryId);
+		m.addAttribute("listproductbycategory", listproductbycategory);
+		return "ProductCategory";
+		
+	}
+	
 	@RequestMapping(value="/ProductInsert", method=RequestMethod.POST)
 	public String insertProduct(@ModelAttribute("product")Product product, Model m ){
 		flag=false;

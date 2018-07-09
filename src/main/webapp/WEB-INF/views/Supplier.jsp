@@ -37,7 +37,10 @@
 <c:if test="${!flag}">
 <form action="InsertSupplier" method="post">
 
-<table m.addAttribute("flag",flag);> 
+<table m.addAttribute("flag",flag); align="center" cellspacing="3" class="table">
+ <tr bgcolor="pink">
+ 	<td colspan="2"><center><b>Manage Suppliers</b></center></td>
+ </tr> 
 	<tr>
 		<td>Supplier Name</td>
 		<td><input type="text" name="supname"/></td>
@@ -59,13 +62,21 @@
 </table>
 </form>
 
-<table align="center">
-	<tr bgcolor="pink">
-		<td>Supplier Id</td>
-		<td>Supplier Name</td>
-		<td>Supplier Address</td>
-		<td>Operation</td>
-	</tr>
+<div class="container">
+ 
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Supplier Id</th>
+        <th>Supplier Name</th>
+        <th>Supplier Address</th>
+        <th>Operation</th>
+        
+        
+      </tr>
+    </thead>
+
+</div>
 	
 	<c:forEach items="${supplierlist}" var="supplier">
 	<tr>

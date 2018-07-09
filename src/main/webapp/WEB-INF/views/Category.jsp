@@ -8,7 +8,7 @@
 <c:if test="${flag}">
 
 <form action="<c:url value="/updateCategory"/>" method="post">
-<table> 
+ <table>
 	<tr>
 		<td>Category Id</td>
 		<td><input type="text" name="catId" value="${categoryData.categoryId}"readonly/></td>
@@ -31,12 +31,18 @@
 	</tr>
 	
 </table>
-</form>
+
+ </form>
 </c:if>
 <c:if test="${!flag}">
 <form action="InsertCatgory" method="post">
 
-<table m.addAttribute("flag",flag);> 
+
+<table m.addAttribute("flag",flag); align="center" cellspacing="3" class="table">
+ <tr bgcolor="pink">
+ 	<td colspan="2"><center><b>Manage Categories</b></center></td>
+ </tr> 
+ 
 	<tr>
 		<td>Category Name</td>
 		<td><input type="text" name="catname"/></td>
@@ -57,14 +63,21 @@
 	
 </table>
 </form>
+<br>
+<hr>
+<div class="container">
+ 
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Category Id</th>
+        <th>Category Name</th>
+        <th>Category Desc</th>
+        <th>Operation</th>
+      </tr>
+    </thead>
 
-<table align="center">
-	<tr bgcolor="pink">
-		<td>Category Id</td>
-		<td>Category Name</td>
-		<td>Category Desc</td>
-		<td>Operation</td>
-	</tr>
+</div>
 	
 	<c:forEach items="${categorylist}" var="category">
 	<tr>
