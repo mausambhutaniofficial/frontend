@@ -8,7 +8,7 @@
 <br><br><br><br><br>
 
 <c:if test="${flag}">
-<form action="<c:url value="/updateSupplier"/>" method="post">
+<form action="<c:url value="/updateSupplier"/>" method="post" enctype="multipart/form-data">
 <table> 
 	<tr>
 		<td>Supplier Id</td>
@@ -23,6 +23,9 @@
 		<td><input type="text" name="supaddr" value="${supplierData.supAddr}"/></td>
 	</tr>
 	
+	<td>Supplier Image</td>
+		<td><input type="file" name="simage"/></td>
+	</tr>
 	<tr>
 		<td colspan="2">
 			<center>
@@ -35,7 +38,7 @@
 
 </c:if>
 <c:if test="${!flag}">
-<form action="InsertSupplier" method="post">
+<form action="InsertSupplier" method="post" enctype="multipart/form-data">
 
 <table m.addAttribute("flag",flag); align="center" cellspacing="3" class="table">
  <tr bgcolor="pink">
@@ -51,6 +54,9 @@
 		<td><input type="text" name="supaddr"></td>
 	</tr>
 	
+	<td>Supplier Image</td>
+		<td><input type="file" name="simage"/></td>
+	</tr>
 	<tr>
 		<td colspan="2">
 			<center>
@@ -70,8 +76,9 @@
         <th>Supplier Id</th>
         <th>Supplier Name</th>
         <th>Supplier Address</th>
+        <th>Supplier Image</th>
         <th>Operation</th>
-        
+ 		       
         
       </tr>
     </thead>
@@ -83,6 +90,7 @@
 		<td>${supplier.suppId}</td>
 		<td>${supplier.supName}</td>
 		<td>${supplier.supAddr}</td>
+		<td><img height="80" width="80" src="/frontend/resources/images/${supplier.suppId}.jpg"></td>
 	
 		<td>
 			<a href="<c:url value='/deleteSupplier/${supplier.suppId}'/>">Delete</a>

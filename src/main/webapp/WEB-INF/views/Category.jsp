@@ -7,7 +7,7 @@
 <br><br><br><br><br><br>
 <c:if test="${flag}">
 
-<form action="<c:url value="/updateCategory"/>" method="post">
+<form action="<c:url value="/updateCategory"/>" method="post" enctype="multipart/form-data">
  <table>
 	<tr>
 		<td>Category Id</td>
@@ -21,7 +21,9 @@
 		<td>Category Decription</td>
 		<td><input type="text" name="catDesc" value="${categoryData.categoryDesc}"/></td>
 	</tr>
-	
+	<td>Category Image</td>
+		<td><input type="file" name="cimage"/></td>
+	</tr>
 	<tr>
 		<td colspan="2">
 			<center>
@@ -35,7 +37,7 @@
  </form>
 </c:if>
 <c:if test="${!flag}">
-<form action="InsertCatgory" method="post">
+<form action="InsertCatgory" method="post" enctype="multipart/form-data">
 
 
 <table m.addAttribute("flag",flag); align="center" cellspacing="3" class="table">
@@ -52,7 +54,9 @@
 		<td>Category Decription</td>
 		<td><input type="text" name="catDesc"></td>
 	</tr>
-	
+	<td>Category Image</td>
+		<td><input type="file" name="cimage"/></td>
+	</tr>
 	<tr>
 		<td colspan="2">
 			<center>
@@ -73,6 +77,7 @@
         <th>Category Id</th>
         <th>Category Name</th>
         <th>Category Desc</th>
+        <th>Category Image</th>
         <th>Operation</th>
       </tr>
     </thead>
@@ -84,6 +89,7 @@
 		<td>${category.categoryId}</td>
 		<td>${category.categoryName}</td>
 		<td>${category.categoryDesc}</td>
+		<td><img height="80" width="80" src="/frontend/resources/images/${category.categoryId}.jpg"></td>
 		
 		<td>
 			<a href="<c:url value='/deleteCategory/${category.categoryId}'/>">Delete</a>
