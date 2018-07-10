@@ -125,6 +125,9 @@ public class ProductController {
 		flag=true;
 		Product product=productDAO.getProduct(prodId);
 		m.addAttribute(product);
+		
+		
+		
 		m.addAttribute("categoryList", this.getCategories());
 		m.addAttribute("supplierlist", this.getSuppliers());
 		//m.addAttribute("productList", productDAO.listprod());
@@ -133,13 +136,44 @@ public class ProductController {
 		
 	}
 	@RequestMapping(value="/UpdateProduct",method=RequestMethod.POST)
-	public String updateProduct(@ModelAttribute("product")Product product,Model m)
+	public String updateProduct(@ModelAttribute("product")Product product,@RequestParam("pimage")MultipartFile imageFile,Model m)
 	{
 		flag=false;
 		productDAO.updateProduct(product);
 		//Product product1=new Product();
 		//m.addAttribute(product1);
 		//m.addAttribute("categoryList",this.getCategories());
+		
+		//Multipart file uploading
+				String path="C:\\Users\\Mausam\\workspace\\frontend\\src\\main\\webapp\\resources\\images\\";
+				path=path+String.valueOf(product.getProdId())+".jpg";
+				
+				File file=new File(path);      //create a blank file  where content can be written
+				
+				if(!imageFile.isEmpty()){
+					try{
+						byte[] buffer=imageFile.getBytes();
+						FileOutputStream fos=new FileOutputStream(file);
+						BufferedOutputStream bs=new BufferedOutputStream(fos);
+						bs.write(buffer);
+						bs.close();
+					}
+					
+					catch(Exception e){
+						System.out.println("Exception arised:"+e);
+					}
+					
+				}
+				else{
+					m.addAttribute("ErrorInfo", "There is system problem. No Image Insertion");
+				}
+				
+				
+				
+				
+				//Multipart file uploading ends
+			
+		
 		m.addAttribute("productList",productDAO.listprod());
 		m.addAttribute("flag", flag);
 		return "ManageProduct";
