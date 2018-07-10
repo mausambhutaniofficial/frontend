@@ -12,7 +12,7 @@
         <th>Stock</th>
         <th>Category</th>
         <th>Supplier</th>
-    
+    <th>Product Image</th>
         
       </tr>
     </thead>
@@ -29,7 +29,7 @@
 		<td>${product.stock}</td>
 		<td>${product.categoryId}</td>
 		<td>${product.suppId}</td>
-		
+		<td><img height="80" width="80" src="/frontend/resources/images/${product.prodId}.jpg"></td>
 	
 </tr>
 </c:forEach>

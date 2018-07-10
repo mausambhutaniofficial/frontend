@@ -66,7 +66,7 @@
 
 <c:if test="${!flag}">
 
-<form:form action="/frontend/ProductInsert" modelAttribute="product" method="post">
+<form:form action="/frontend/ProductInsert" modelAttribute="product" method="post" enctype="multipart/form-data">
 
 <table align="center" cellspacing="3" class="table">
 	<tr bgcolor="pink">
@@ -110,6 +110,10 @@
 			</form:select></td>
 	</tr>
 	
+	<tr>
+		<td>Product Image</td>
+		<td><form:input type="file" path="pimage"/></td>
+	</tr>
 	<tr>
 		<td>
 			<center><input type="submit" value="Save"/></center>
