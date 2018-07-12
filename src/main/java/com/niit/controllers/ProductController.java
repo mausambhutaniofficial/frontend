@@ -48,12 +48,19 @@ public class ProductController {
 		return "ManageProduct";
 	}
 	
-	@RequestMapping("/displayProduct")
+	@RequestMapping("/Productdisplay")
 	public String displayAllProducts(Model m){
 		m.addAttribute("productList", productDAO.listprod());
 		return "ProductDisplay";
 	}
 	
+	@RequestMapping("/totalProductInfo/{prodId}")
+	public String showTotalProductDisplay(Model m,@PathVariable("prodId")int prodId){
+		Product product=productDAO.getProduct(prodId);
+		m.addAttribute("product",product);
+		m.addAttribute("categoryName",categoryDAO.getCategory(product.getCategoryId()).getCategoryName());
+		return "TotalProductDisplay";
+	}
 	
 	@RequestMapping(value="/GetProductByCategory/{categoryID}")
 	public String getproductbycategory(@PathVariable("categoryID") int categoryId, Model m){

@@ -44,7 +44,7 @@
 				<li><a href="<c:url value='/home'/>"> Home</a></li>
             <li><a href="<c:url value='/login'/>">Login</a></li>
             <li><a href="<c:url value='/register'/>">Register</a></li>
-             <li><a href="<c:url value='/productdisplay'/>">ProductDisplayr</a></li>
+             <li><a href="<c:url value='/Productdisplay'/>">Product Display</a></li>
             <li><a href="<c:url value='/category'/>">Category</a></li>
             <li><a href="<c:url value='/contactus'/>">ContactUs</a></li>
             <li><a href="<c:url value='/aboutus'/>">AboutUs</a></li>
