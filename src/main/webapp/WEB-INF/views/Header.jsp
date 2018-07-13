@@ -42,7 +42,7 @@
 			</form> -->
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="<c:url value='/home'/>"> Home</a></li>
-            <li><a href="<c:url value='/login'/>">Login</a></li>
+            <li><a href="<c:url value='/login1'/>">Login</a></li>
             <li><a href="<c:url value='/register'/>">Register</a></li>
              <li><a href="<c:url value='/Productdisplay'/>">Product Display</a></li>
             <li><a href="<c:url value='/category'/>">Category</a></li>

@@ -1,8 +1,9 @@
 
 <%@ page language="java" contentType="text/html"%>
 <%@include file="Header.jsp"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <title>Register</title>
-<style>
+ <style>
  body {
 	background: url('resources/images/signin.jpg') fixed;
 	background-size: cover;
@@ -172,7 +173,7 @@ form.login a:hover {
 form.btn {
 width:100%;}
 </style>
- </head>
+  </head>
 <body>
 
 
@@ -185,66 +186,116 @@ width:100%;}
 		src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 	<!------ Include the above in your HEAD tag ---------->
+<%-- <form:form action="/frontend/Register" modelAttribute="userDetail" method="post">
+
+<table align="center" cellspacing="3" class="table">
+	<tr bgcolor="pink">
+		<td colspan="2"><center><b>Manage Products</b></center></td>
+	</tr>
+	
+	<tr>
+		<td>User Name</td>
+		<td><form:input   placeholder="Username" path="userName" /></td>
+	</tr>
+	
+	<tr>
+		<td>Email</td>
+		<td><form:input   placeholder="Email" path="email" /></td>
+	</tr>
+	
+	<tr>
+		<td>Customer name</td>
+		<td><form:input  placeholder="Enter Full Name" path="customerName" /></td>
+	</tr>	 
+	
+	<tr>
+		<td>Mobile</td>
+		<td><form:input   placeholder="Mobile number" path="mobile" /></td>
+	</tr>
+	
+	<tr>
+		<td>Address</td>
+			<td><form:input   placeholder="Address" path="address" /></td>
+
+	</tr>
+	
+	<tr>
+		<td>Password</td>
+		<form:input   placeholder="Password" path="password" /></td>
+	</tr>
+	
+	<tr>
+		<td>
+			<center><input type="submit" class="btn btn-primary" value="Register"/></center></td>
+		
+	</tr>
+
+</table>
+</form:form>
+
+ --%>	
+	
+
 	
 	
-		<div class="form-row">
+	 <div class="form-row">
 
 			<div>
 				<div class="form-group col-md-8"></div>
 				<div class="form-group col-md-4">
-				<form>
-				<marquee>
-				<p class="form-title" ><b><u>Register Here</u></b></p></marquee>
-					<label for="inputEmail4">Username</label> 
-					<input type="text"
-						class="form-control" id="inputUsername4" placeholder="Username">
-					
-					<label for="inputEmail4">Email</label> 
-					<input type="email"
-						class="form-control" id="inputEmail4" placeholder="Email">
-					
-					<label for="inputAddress">Mobile</label> 
-					<input type="tel"
-						class="form-control" id="inputAddress" placeholder="9999999999">
-					
-					<label for="inputAddress">Address</label> 
-					<input type="text"
-						class="form-control" id="inputAddress" placeholder="1234 Main St">
-					
-					<label for="inputAddress2">Address 2</label> 
-					<input type="text"
-						class="form-control" id="inputAddress2"
-						placeholder="Apartment, studio, or floor"> <label
-						for="inputCity">City</label> <input type="text"
-						class="form-control" id="inputCity"> <label
-						for="inputState">State</label> <select id="inputState"
-						class="form-control">
-						<option selected>Choose...</option>
-						<option>...</option>
-					</select> 
-					
-					<label for="inputZip">Zip</label> 
-					<input type="text"
-						class="form-control" id="inputZip"> 
-						
-					<label	for="inputPassword4">Password</label> 
-					<input type="password"
-						class="form-control" id="inputPassword4" placeholder="Password">
-					
-					<label for="inputPassword4">Confirm Password</label> 
-					<input	type="password" class="form-control" id="inputPassword4"
-						placeholder="Password"> 
-						
-					<br><br>
+				<p class="form-title" ><center><b>Register Here</b></center>
+				<form:form action="/frontend/Register" modelAttribute="userDetail" method="post">
+				
+				<table align="center" cellspacing="3" class="table">
+				
 			
-						<button type="reset" class="btn btn-primary">Reset</button>
-						<button type="submit" class="btn btn-primary">Register</button>
+				
+				
 			
-	</form>
+				<tr>
+				<td>	<label for="inputEmail4">Username</label> 
+					<form:input class="form-control"  placeholder="Username" path="userName" /></td>
+				</tr>	
+					
+					<tr>
+					<td><label for="inputEmail4">Email</label> 
+					<form:input class="form-control"  placeholder="Email" path="email" /></td>
+					</tr>
+					<tr>
+					<td><label for="inputEmail4">Customer Name</label> 
+					<form:input class="form-control"  placeholder="Enter Full Name" path="customerName" /></td>
+					</tr>
+					<tr>
+					
+					<td><label for="inputAddress">Mobile</label> 
+					<form:input class="form-control"  placeholder="Mobile number" path="mobile" /></td>
+					
+					</tr>
+					
+					<tr>
+					<td><label for="inputAddress">Address</label> 
+					<form:input class="form-control"  placeholder="Address" path="address" /></td>
+					</tr>
+					
+					<tr>	
+					<td><label	for="inputPassword4">Password</label> 
+					<form:input type="password" class="form-control"  placeholder="Password" path="password" /></td>
+					</tr>
+						
+					
+					<tr>
+					
+			
+						<td><center><input type="submit" class="btn btn-primary" value="Register"/></center></td>
+						<td><button type="reset" class="btn btn-primary">Reset</button></td>
+					</tr>
+			</table>		
+			
+</form:form>
 
 
 	</div>
-
+ 
 
 
 	<script> $(document).ready(function () {
@@ -258,6 +309,6 @@ width:100%;}
 });</script>
 
 
-	<%@include file="footer.jsp"%>
+	<%-- <%@include file="footer.jsp"%> --%>
 </body>
 </html>

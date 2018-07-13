@@ -204,19 +204,19 @@ form.login a:hover
     <div class="row">
         <div class="col-md-12">
             <div class="pr-wrap">
-                <div class="pass-reset">
+                <!-- <div class="pass-reset">
                     <label>
                         Enter the email you signed up with</label>
                     <input type="email" placeholder="Email" />
                     <input type="submit" value="Submit" class="pass-reset-submit btn btn-success btn-sm" />
                 </div>
-            </div>
+            --> </div>
             <div class="wrap">
                 <p class="form-title">
                     Sign In</p>
-                <form class="login">
-                <input type="text" placeholder="Username" />
-                <input type="password" placeholder="Password" />
+                <form id="LoginForm" action="perform_login" method="post" class="form-horizontal" role="form">
+                <input id="username" type="text" class="form-control" name="username" placeholder="Username" />
+                <input id="password" type="password" class="form-control" name="password" placeholder="Password" />
                 <input type="submit" value="Sign In" class="btn btn-success btn-sm" />
                 <div class="remember-forgot">
                     <div class="row">
