@@ -214,7 +214,7 @@ form.login a:hover
             <div class="wrap">
                 <p class="form-title">
                     Sign In</p>
-                <form id="LoginForm" action="perform_login" method="post" class="form-horizontal" role="form">
+                <form id="LoginForm" action="login" method="post" class="form-horizontal" role="form">
                 <input id="username" type="text" class="form-control" name="username" placeholder="Username" />
                 <input id="password" type="password" class="form-control" name="password" placeholder="Password" />
                 <input type="submit" value="Sign In" class="btn btn-success btn-sm" />

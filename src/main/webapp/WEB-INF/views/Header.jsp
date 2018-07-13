@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html"%>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
-
+<%-- <%@taglib prefix="security" uri="http://www.springframework.org/security/tags"%> --%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,14 +42,18 @@
 			</form> -->
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="<c:url value='/home'/>"> Home</a></li>
+				<security:authorize access="isAnonymous()">
             <li><a href="<c:url value='/login1'/>">Login</a></li>
             <li><a href="<c:url value='/register'/>">Register</a></li>
+            </security:authorize>
              <li><a href="<c:url value='/Productdisplay'/>">Product Display</a></li>
             <li><a href="<c:url value='/category'/>">Category</a></li>
             <li><a href="<c:url value='/contactus'/>">ContactUs</a></li>
             <li><a href="<c:url value='/aboutus'/>">AboutUs</a></li>
             <li><a href="<c:url value='/Admin'/>">Admin</a></li>
-				
+            <security:authorize access="isAuthenticated()">
+			<li><a href="logout"><font size="2">LogOut</font></a></li>
+			</security:authorize>
 				</ul>
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container-fluid -->
