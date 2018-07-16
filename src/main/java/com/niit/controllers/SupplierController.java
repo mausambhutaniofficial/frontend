@@ -51,7 +51,7 @@ public class SupplierController {
 		m.addAttribute("supplierlist", listsupp);
 		
 		//Multipart file uploading
-		String path="C:\\Users\\Mausam\\workspace\\frontend\\src\\main\\webapp\\resources\\images\\";
+		String path="C:\\Users\\Dell\\Downloads\\frontend-master\\src\\main\\webapp\\resources\\images1\\supplier\\";
 		path=path+String.valueOf(supplier.getSuppId())+".jpg";
 		
 		File file=new File(path);      //create a blank file  where content can be written
@@ -117,7 +117,7 @@ public class SupplierController {
 		m.addAttribute("supplierlist", listsupp);
 		
 		//Multipart file uploading
-				String path="C:\\Users\\Mausam\\workspace\\frontend\\src\\main\\webapp\\resources\\images\\";
+		String path="C:\\Users\\Dell\\Downloads\\frontend-master\\src\\main\\webapp\\resources\\images1\\supplier\\";
 				path=path+String.valueOf(supplier.getSuppId())+".jpg";
 				
 				File file=new File(path);      //create a blank file  where content can be written
@@ -151,4 +151,3 @@ public class SupplierController {
 	}
 	
 }
- 

@@ -1,17 +1,31 @@
 package com.niit.controllers;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.niit.dao.UserDetailDAO;
 import com.niit.model.UserDetail;
 
 @Controller
 public class PageController {
 
+	@Autowired 
+	UserDetailDAO userDetailDAO;
+	
 	@RequestMapping(value="/")
-	public String showHomePage(){
-		
+	public String showHomePage(HttpServletRequest request,HttpSession session){
+		/*String username=(String)request.getUserPrincipal().getName();
+		UserDetail userDetail=userDetailDAO.getUserDetail(username);
+		String role=userDetail.getRole();
+		System.out.println(role+username+"-----------------");
+		session.setAttribute("role", role);
+		session.setAttribute("username", username);
+		*/
 		return "index";
 	}
 	
@@ -29,7 +43,6 @@ public class PageController {
 	
 	@RequestMapping(value="/register")
 	public String showRegisterPage(Model m){
-		
 		UserDetail userDetail1=new UserDetail();
 		m.addAttribute(userDetail1);
 		return "Register";
@@ -46,12 +59,10 @@ public class PageController {
 		
 		return "AboutUs";
 	}
-
-	@RequestMapping(value="/Admin")
-	public String showAdminUs(){
+	@RequestMapping(value="/admin")
+	public String showAdmin(){
 		
 		return "Admin";
 	}
-	
 
 }

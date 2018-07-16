@@ -42,21 +42,33 @@
 			</form> -->
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="<c:url value='/home'/>"> Home</a></li>
-				<security:authorize access="isAnonymous()">
+				
+				
+			<c:if test="${pageContext.request.userPrincipal.name==null }">
             <li><a href="<c:url value='/login1'/>">Login</a></li>
             <li><a href="<c:url value='/register'/>">Register</a></li>
-            </security:authorize>
+            </c:if>
+            
+            
              <li><a href="<c:url value='/Productdisplay'/>">Product Display</a></li>
             <li><a href="<c:url value='/category'/>">Category</a></li>
             <li><a href="<c:url value='/contactus'/>">ContactUs</a></li>
             <li><a href="<c:url value='/aboutus'/>">AboutUs</a></li>
-            <li><a href="<c:url value='/Admin'/>">Admin</a></li>
-            <security:authorize access="isAuthenticated()">
-			<li><a href="logout"><font size="2">LogOut</font></a></li>
-			</security:authorize>
+            <li><a href="<c:url value='/admin'/>">Admin</a></li>
+            
+            <c:if test="${pageContext.request.userPrincipal.name!=null}">
+			<li><a href="/frontend/logout"><font size="2">LogOut</font></a></li>
+			</c:if>
+			
+			
+			<c:if test="${pageContext.request.userPrincipal.name!=null }">
+           <li>
+            <a class="nav-link">WELCOME:${pageContext.request.userPrincipal.name}</a>
+          </li>
+</c:if>
 				</ul>
-			</div><!-- /.navbar-collapse -->
-		</div><!-- /.container-fluid -->
+			</div>
+		</div>
 	</nav>
 
 

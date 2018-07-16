@@ -77,7 +77,7 @@ span.glyphicon {
  
  <div class="container">    
 		<div class="row">
-			<div class="col-md-8">				
+			<div class="col-md-12">				
 				<div class="panel panel-default  panel--styled">
 					<div class="panel-body">
 						<div class="col-md-12 panelTop">	
@@ -86,7 +86,25 @@ span.glyphicon {
 							</div>
 							<div class="col-md-8">	
 								<h2>${product.prodName}</h2>
-								<p>${product.prodDesc}</p>
+								<p>${product.prodDesc}</p><br>
+								<div class="row">
+									<div class="col-md-4"><b>Supplier</b>
+											
+											
+									</div>
+									<div class="col-md-4"><b>category</b>
+									</div>
+								</div>
+								<br>
+								<div class="row">
+									<div class="col-md-4">
+											<img class="img-responsive" height="100px" width="80px" src="/frontend/resources/images/${product.suppId}.jpg">
+											
+									</div>
+									<div class="col-md-4">
+											<img class="img-responsive" height="100px" width="80px" src="/frontend/resources/images/${product.categoryId}.jpg">
+									</div>
+								</div>
 							</div>
 						</div>
 						

@@ -53,13 +53,13 @@ public class ProductController {
 		m.addAttribute("productList", productDAO.listprod());
 		return "ProductDisplay";
 	}
-	
 	@RequestMapping("/totalProductInfo/{prodId}")
 	public String showTotalProductDisplay(Model m,@PathVariable("prodId")int prodId){
 		Product product=productDAO.getProduct(prodId);
 		m.addAttribute("product",product);
-		m.addAttribute("categoryName",categoryDAO.getCategory(product.getCategoryId()).getCategoryName());
+		m.addAttribute("categoryName", categoryDAO.getCategory(product.getCategoryId()).getCategoryName());
 		return "TotalProductDisplay";
+		
 	}
 	
 	@RequestMapping(value="/GetProductByCategory/{categoryID}")
@@ -78,7 +78,7 @@ public class ProductController {
 		Product product1=new Product();
 		m.addAttribute(product1);
 		//Multipart file uploading
-		String path="C:\\Users\\Mausam\\workspace\\frontend\\src\\main\\webapp\\resources\\images\\";
+		String path="C:\\Users\\Dell\\Downloads\\frontend-master\\src\\main\\webapp\\resources\\images1\\product\\";
 		path=path+String.valueOf(product.getProdId())+".jpg";
 		
 		File file=new File(path);      //create a blank file  where content can be written
@@ -152,7 +152,7 @@ public class ProductController {
 		//m.addAttribute("categoryList",this.getCategories());
 		
 		//Multipart file uploading
-				String path="C:\\Users\\Mausam\\workspace\\frontend\\src\\main\\webapp\\resources\\images\\";
+				String path="C:\\Users\\Dell\\Downloads\\frontend-master\\src\\main\\webapp\\resources\\images1\\product\\";
 				path=path+String.valueOf(product.getProdId())+".jpg";
 				
 				File file=new File(path);      //create a blank file  where content can be written
