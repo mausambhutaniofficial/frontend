@@ -2,6 +2,8 @@
 <%@include file="/WEB-INF/views/Header.jsp" %>
 
 <head>
+
+
   <title>ShoppingWhopping.com</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,6 +13,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   
 </head>
+
 <body>
 
 <div class="container">
@@ -56,7 +59,7 @@
 </div>
 
 <br>
- <h2><center><font face="trebuchet ms"><mark>ShoppingWhopping Exclusives</mark><span class="glyphicon" style="color:#f4511e">&#xe042;</span></center></h2><br><br>
+ <h2><center><font face="trebuchet ms"><mark>ShoppingWhopping Categories</mark><span class="glyphicon" style="color:#f4511e">&#xe042;</span></center></h2><br><br>
 
       <div class="row">
       <div class="col-md-1"></div>
@@ -80,7 +83,7 @@
             <a href="#"><img class="card-img-top" src="resources/images/port2.jpeg" width="150" height="250"></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#">in Smart Watches</a>
+                <a href="/frontend/GetProductByCategory/186">in Smart Watches</a>
               </h4>
               
               <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#Smart_Watches">Get Info</button>
@@ -96,7 +99,7 @@
             <a href="#"><img class="card-img-top" src="resources/images/port3.jpeg" width="150" height="250"></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#">in Men's Shirts </a>
+                <a href="/frontend/GetProductByCategory/196">in Men's Shirts </a>
               </h4>
               <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#Men">Get Info</button>
   <div id="Men" class="collapse">
@@ -112,7 +115,7 @@
             <a href="#"><img class="card-img-top" src="resources/images/port4.jpeg" width="150" height="250"></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#">in Women's Tops/T-Shirts</a>
+                <a href="/frontend/GetProductByCategory/220">in Women's Tops/T-Shirts</a>
               </h4>
                 <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#Women">Get Info</button>
   <div id="Women" class="collapse">
@@ -128,7 +131,7 @@
             <a href="#"><img class="card-img-top" src="resources/images/port5.jpeg" width="150" height="250"></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#">in iPhones and Mobile Phones</a>
+                <a href="/frontend/GetProductByCategory/222">in iPhones and Mobile Phones</a>
               </h4>
               <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#iPhones_and_Mobile_Phones">Get Info</button>
   <div id="iPhones_and_Mobile_Phones" class="collapse">
@@ -143,7 +146,7 @@
             <a href="#"><img class="card-img-top" src="resources/images/port6.jpeg" width="300" height="250"></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#">in Mac Books and Laptops</a>
+                <a href="/frontend/GetProductByCategory/223">in Mac Books and Laptops</a>
               </h4>
               
               <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#Mac_Books_and_Laptops">Get Info</button>
@@ -155,12 +158,103 @@
           </div>
         </div>
         
+<hr>
+<h2><center><font face="trebuchet ms"><mark>ShoppingWhopping Exclusives</mark><span class="glyphicon" style="color:#f4511e">&#xe042;</span></center></h2><br><br>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <center><img  src="resources/images/ex1.jpeg" alt="Jane" width="200" height="300"></center>
+      <div class="container">
+        <h4>Apple iPhone X (Space Gray)</h4>
+        <p class="title">Apple</p>
+        <p>64 GB ROM <br>
+        5.8 inch Super Retina HD Display<br>
+        12MP + 12MP Dual Rear Camera | 7MP Front Camera<br>
+        A11 Bionic Chip with 64-bit Architecture, Neural Engine,<br> Embedded M11 Motion Coprocessor Processor</p>
+        <p><button class="button">&#8377;88,999</button></p>
+      </div>
+    </div>
+  </div>
 
+  <div class="column">
+    <div class="card">
+      <center><img src="resources/images/ex2.jpg" alt="Mike" width="200" height="300"></center>
+      <div class="container">
+        <h4>OnePlus 6 (Mirror Black)</h4>
+        <p class="title">OnePlus</p>
+        <p>6 GB RAM | 64 GB ROM | Expandable Upto 400 GB<br>
+        6.28-inch Full HD Display<br>
+        20MP+16MP primary dual camera with OIS, Super Slow motion,<br> Portrait mode | 16MP front  camera<br> 
+        3300mAH battery</p>
+        <p><button class="button">&#8377;34,999</button></p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+       <center><img src="resources/images/ex3.jpg" alt="Mike" width="300" height="300"></center>
+      <div class="container">
+        <h4>Samsung Galaxy S9 Plus SM-G965FZBDINS<br> (Coral Blue) </h4>
+        <p class="title">Samsung</p>
+        <p>6 GB RAM | 64 GB ROM | Expandable Upto 400 GB
+        <br>6.2 inch Quad HD+ Display<br>
+12MP + 12MP Dual Rear Camera | 8MP Front Camera<br>
+3500 mAh Battery</p>
+        <p><button class="button">&#8377;64,900</button></p>
+      </div>
+    </div>
+  </div>
+</div>
 
+<br>
 
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <center><img  src="resources/images/ex4.jpeg" alt="Jane" width="290" height="300"></center>
+      <div class="container">
+        <h4>HP Core i7 7th Gen (Dark Ash SIlver)</h4>
+        <p class="title">hp</p>
+        <p>Intel Core i7 Processor (7th Gen) <br>
+        8 GB DDR3 RAM<br>
+        64 bit Windows 10 Operating System<br>
+        13.3 inch Display | 512 GB SSD</p>
+        <p><button class="button">&#8377;1,14,500</button></p>
+      </div>
+    </div>
+  </div>
 
-
-
+  <div class="column">
+    <div class="card">
+      <center><img src="resources/images/ex5.jpg" alt="Mike" width="350" height="300"></center>
+      <div class="container">
+        <h4>Apple MacBook Pro Core i7 7th Gen (SPace Grey)</h4>
+        <p class="title">Apple</p>
+        <p>Intel Core i7 Processor (7th Gen)<br>
+        16 GB DDR3 RAM<br>
+        64 bit Mac OS Operating System<br> 
+        15.4 inch Display | 512 GB SSD</p>
+        <p><button class="button">&#8377;2,24,900
+</button></p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <div class="card">
+       <center><img src="resources/images/ex6.jpeg" alt="Mike" width="300" height="280"></center>
+      <div class="container">
+        <h4>Dell Inspiron Core i7 6th Gen (Black) </h4>
+        <p class="title">Dell</p>
+        <p>NVIDIA GeForce GTX 960M GPU Enriches the Visuals of <br>the Latest Games Around
+        <br>16 GB DDR3 RAM<br>
+64 bit Windows 10 Operating System<br>
+15.6 inch Touchscreen Display | 1 TB HDD|128 GB SSD</p>
+        <p><button class="button">&#8377;1,20,000
+</button></p>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
@@ -174,6 +268,8 @@
 
 
 <%@include file="/WEB-INF/views/footer.jsp" %>
+
+
 </body>
 </html>
 

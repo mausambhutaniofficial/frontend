@@ -57,6 +57,14 @@ public class CartController {
 		return "Cart";
 		
 	}
+	@RequestMapping(value="/viewcart")
+	public String showCartPage(HttpServletRequest request,Model m){
+		String username=(String)request.getUserPrincipal().getName();
+		List<CartItem> cartItems=cartDAO.showCartItems(username);
+		m.addAttribute("cartItems",cartItems);
+		m.addAttribute("totalPurchaseAmount",this.calcTotalPurchaseAmount(cartItems));
+		return "Cart";
+	}
 	@RequestMapping(value="/updateCartItem/{cartItemId}")
 	public String updateCartItem(@RequestParam("quantity") int quantity,@PathVariable("cartItemId") int cartItemId,HttpServletRequest request,Model m)
 	{
@@ -87,7 +95,7 @@ public class CartController {
 	public String continueShopping(Model m) {
 		
 		m.addAttribute("productList",productDAO.listprod());
-		return "index";
+		return "Productdisplay";
 	}
 
 	

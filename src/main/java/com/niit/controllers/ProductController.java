@@ -132,9 +132,6 @@ public class ProductController {
 		flag=true;
 		Product product=productDAO.getProduct(prodId);
 		m.addAttribute(product);
-		
-		
-		
 		m.addAttribute("categoryList", this.getCategories());
 		m.addAttribute("supplierlist", this.getSuppliers());
 		//m.addAttribute("productList", productDAO.listprod());

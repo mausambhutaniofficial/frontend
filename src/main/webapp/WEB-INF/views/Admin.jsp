@@ -34,16 +34,14 @@ h1.page-header {
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">
-				Brand
-			</a>
+			
 		</div>
 
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">			
 			
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="<c:url value='/home'/>" target="_blank" >Visit Site</a></li>
+				<li><a href="<c:url value='/home'/>" >Visit Site<span class="glyphicon glyphicon-home"></span></i></a></li>
 				
 				</ul>
 			</div><!-- /.navbar-collapse -->
@@ -53,9 +51,13 @@ h1.page-header {
 		<div class="col-md-2 sidebar">
 			<ul class="nav nav-pills nav-stacked">
 				<li class="active"><a href="<c:url value='/home'/>">Home</a></li>
-				<li><a href="<c:url value='/category'/>">Manage Category</a></li>
-				<li><a href="<c:url value='/supplier'/>">Manage Supplier</a></li>
-				<li><a href="<c:url value='/product'/>">Manage Product</a></li>
+				<li><a href="<c:url value='/category'/>">Manage Category <span class="glyphicon glyphicon-send"></span></a></li>
+				<li><a href="<c:url value='/supplier'/>">Manage Supplier<span class="glyphicon glyphicon-user"></span></a></li>
+				<li><a href="<c:url value='/product'/>">Manage Product<span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+				<li><a href="<c:url value='/coupon'/>">Manage Coupons<span class="glyphicon glyphicon-tags"></span></a></li>
+                  
+                  
+
 			</ul>
 		</div>
 		

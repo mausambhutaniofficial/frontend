@@ -1,9 +1,14 @@
-<%@ page language="java" contentType="text/html" %>
 <%@include file="Header.jsp" %>
+<%@ page language="java" contentType="text/html" %>
+
 <%@ page isELIgnored="false" %>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
-<title>Category </title>
-<style>
+<title>Coupons </title>
+<head><style>
+
+
+
+
 
   /*NAVBAR STYLES*/
   .navbar {
@@ -37,72 +42,25 @@
 
 .navbar-nav > li > .dropdown-menu {     background-color:#778899;  }
 
-</style>
 
-<body>
-<br><br><br>
-<c:if test="${flag}">
-<form action="<c:url value="/updateCategory"/>" method="post" enctype="multipart/form-data">
 
+
+
+
+
+
+
+		</style>
+    </head>
+
+ <body>
+ <c:if test="${flag}">
+
+<form action="<c:url value="/updateCoupon"/>" method="post">
 <div class="col-md-12">
 				<div class="panel panel-success">
 					<div class="panel-heading">
-						<h3 class="panel-title">Edit Category</h3>
-						<div class="pull-right">
-							
-						</div>
-					</div>
-					<div class="panel-body">
-						 
-					</div>
-					<table class="table table-hover" id="dev-table">
-						
-						<tbody>
-						
-<tr>
-		<td>Category Id</td>
-		<td><input type="text" name="catId" value="${categoryData.categoryId}"readonly/></td>
-	<tr>
-		<td>Category Name</td>
-		<td><input type="text" size="50" name="catname" value="${categoryData.categoryName}"/></td>
-	</tr>
-	
-	<tr>
-		<td>Category Decription</td>
-		<td><input type="text" size="50" name="catDesc" value="${categoryData.categoryDesc}"/></td>
-	</tr>
-	<td>Category Image</td>
-		<td><input type="file" name="cimage"/></td>
-	</tr>
-	<tr>
-		<td colspan="2">
-			<center>
-			<input type="submit" value="Save changes"/>
-			</center>
-		</td>
-	</tr>
-	
-</table>
-
- </form>
-</c:if>
-
-
-
-
-
-
-
-<div class="row">
-<c:if test="${!flag}">
-<form action="InsertCatgory" method="post" enctype="multipart/form-data">
-
-
-<table m.addAttribute("flag",flag);
-<div class="col-md-12">
-				<div class="panel panel-success">
-					<div class="panel-heading">
-						<h3 class="panel-title">&nbsp;&nbsp;&nbsp;&nbsp;Add New Category</h3>
+						<h3 class="panel-title">Edit Coupon</h3>
 						<div class="pull-right">
 							
 						</div>
@@ -115,24 +73,23 @@
 						<tbody>
 						
 	<tr>
-		<td>&nbsp;&nbsp;Category Name</td>
-		<td><input type="text" name="catname" size="50"/></td>
+	<td>Coupon Name</td>
+		<td><input type="text" name="couponName" value="${couponData.couponName}"/></td>
+	</tr>
+	<tr>
+	<td>Coupon Description</td>
+		<td><input type="text" name="couponDesc" value="${couponData.couponDesc}"/></td>
 	</tr>
 	
 	<tr>
-		<td>&nbsp;&nbsp;Category Decription</td>
-		<td><input type="text" name="catDesc" size="50"></td>
+		<td>Coupon Value</td>
+		<td><input type="text" name="couponValue" value="${couponData.couponValue}"/></td>
 	</tr>
-	<td>&nbsp;&nbsp;Category Image</td>
-		<td><input type="file" name="cimage"/></td>
-	</tr>
-	<tr>
 	<td colspan="2">
 			<center>
-			<button type="submit" class="btn btn-primary btn-lg">Add </button>
+			<button type="submit" class="btn btn-primary btn-lg">Save </button>
 			</center>
 	</td>	
-	</tr>
 	
 						</tbody>
 					</table>
@@ -141,7 +98,67 @@
 			</div>
 		</div>
 	</div>
+
+
+
+</c:if>
+
+
+
+
+
+
+
+
+<div class="row">
+
+<c:if test="${!flag}">
+<form action="InsertCoupon" method="post" >
+<table m.addAttribute("flag",flag);>
+
+<div class="col-md-12">
+				<div class="panel panel-success">
+					<div class="panel-heading">
+						<h3 class="panel-title">Add New Coupon</h3>
+						<div class="pull-right">
+							
+						</div>
+					</div>
+					<div class="panel-body">
+						 
+					</div>
+					<table class="table table-hover" id="dev-table">
+						
+						<tbody>
+						
+	<tr>
 	
+		<td>Coupon Name</td>
+		<td><input type="text" name="couponName"/></td>
+	</tr>
+	<tr>
+	<td>Coupon Description</td>
+		<td><input type="text" name="couponDesc" /></td>
+</tr>
+	
+	<tr>
+		<td>Coupon Value</td>
+		<td><input type="text" name="couponValue" /></td>
+</tr>
+<tr>
+	<td colspan="2">
+			<center>
+			<button type="submit" class="btn btn-primary btn-lg">Add </button>
+			</center>
+	</td>	
+	
+						</tbody>
+					</table>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
 
@@ -155,7 +172,7 @@
 			<div class="col-md-12">
 				<div class="panel panel-success">
 					<div class="panel-heading">
-						<h3 class="panel-title">Manage Categories</h3>
+						<h3 class="panel-title">Manage Coupons</h3>
 						<div class="pull-right">
 							
 						</div>
@@ -164,37 +181,42 @@
 						 
 					</div>
 					<table class="table table-hover" id="dev-table">
-    <thead>
-      <tr>
-        <th>Category Id</th>
-        <th>Category Name</th>
-        <th>Category Desc</th>
-        <th>Category Image</th>
+						<thead>
+							<tr>
+								 <th>Coupon Name</th>
+        <th>Coupon Decription</th>
+        <th>Coupon Value</th>
         <th>Operation</th>
       </tr>
-    </thead>
+						</thead>
 						<tbody>
-		<c:forEach items="${categorylist}" var="category">
+							<c:forEach items="${couponlist}" var="coupon">
 	<tr>
-		<td>${category.categoryId}</td>
-		<td>${category.categoryName}</td>
-		<td>${category.categoryDesc}</td>
-		<td><img height="80" width="80" src="/frontend/resources/images/${category.categoryId}.jpg"></td>
+	
+		<td>${coupon.couponName}</td>
+		<td>${coupon.couponDesc}</td>
+		<td>${coupon.couponValue}</td>
 		
 		<td>
-			<a href="<c:url value='/deleteCategory/${category.categoryId}'/>">Delete</a>
-			<a href="<c:url value='/editCategory/${category.categoryId}'/>">Edit</a>
+		
+		
+	 <%-- <button rel="tooltip" class="btn btn-primary"type="submit" value="Update"><i class="fa fa-pencil"></i></button>                                   
+ 	<a href="<c:url value='/deleteCoupon/${coupon.couponName}'/>" class="btn btn-danger"><i class="fa fa-trash-o"></i></a> --%>
+		
+			<a href="<c:url value='/deleteCoupon/${coupon.couponName}'/>">Delete</a>
+			<a href="<c:url value='/editCoupon/${coupon.couponName}'/>">Edit</a>
 	</tr>
 	</c:forEach>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
 
-</table>
+
 
 
 </body>
 </html>
-
-
-
-
-
-
+</html>

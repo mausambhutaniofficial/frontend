@@ -160,15 +160,6 @@ form.login a:hover {
 	transition: background-color 0.5s ease;
 }
 
-.posted-by {
-	position: absolute;
-	bottom: 26px;
-	margin: 0 auto;
-	color: #FFF;
-	background-color: rgba(0, 0, 0, 0.66);
-	padding: 10px;
-	left: 45%;
-}
 
 form.btn {
 width:100%;}
@@ -186,64 +177,12 @@ width:100%;}
 		src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 	<!------ Include the above in your HEAD tag ---------->
-<%-- <form:form action="/frontend/Register" modelAttribute="userDetail" method="post">
-
-<table align="center" cellspacing="3" class="table">
-	<tr bgcolor="pink">
-		<td colspan="2"><center><b>Manage Products</b></center></td>
-	</tr>
-	
-	<tr>
-		<td>User Name</td>
-		<td><form:input   placeholder="Username" path="userName" /></td>
-	</tr>
-	
-	<tr>
-		<td>Email</td>
-		<td><form:input   placeholder="Email" path="email" /></td>
-	</tr>
-	
-	<tr>
-		<td>Customer name</td>
-		<td><form:input  placeholder="Enter Full Name" path="customerName" /></td>
-	</tr>	 
-	
-	<tr>
-		<td>Mobile</td>
-		<td><form:input   placeholder="Mobile number" path="mobile" /></td>
-	</tr>
-	
-	<tr>
-		<td>Address</td>
-			<td><form:input   placeholder="Address" path="address" /></td>
-
-	</tr>
-	
-	<tr>
-		<td>Password</td>
-		<form:input   placeholder="Password" path="password" /></td>
-	</tr>
-	
-	<tr>
-		<td>
-			<center><input type="submit" class="btn btn-primary" value="Register"/></center></td>
-		
-	</tr>
-
-</table>
-</form:form>
-
- --%>	
-	
-
-	
-	
 	 <div class="form-row">
 
 			<div>
 				<div class="form-group col-md-8"></div>
 				<div class="form-group col-md-4">
-				<p class="form-title" ><center><b>Register Here</b></center>
+				              <font face="trebuchet ms" size="10"><center>Register Here</center></font>
 				<form:form action="/frontend/Register" modelAttribute="userDetail" method="post">
 				
 				<table align="center" cellspacing="3" class="table">
@@ -279,24 +218,42 @@ width:100%;}
 					
 					<tr>	
 					<td><label	for="inputPassword4">Password</label> 
-					<form:input type="password" class="form-control"  placeholder="Password" path="password" /></td>
+					<form:input type="password" name="password"  id="password" class="form-control"  placeholder="Password" path="password" 
+					pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+					title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"  /></td>
 					</tr>
-						
 					
+					
+					
+					
+					
+					<tr>	
+					<td><label	for="inputPassword4">Confirm Password</label> 
+					<form:input name="confirmPassword"  type="password" id="confirm_password" class="form-control"  placeholder="Password" path="password" />
+					</td>
+					</tr>
+					
+					
+					
+					
+					
+					
+					
+										
 					<tr>
-					
-			
-						<td><center><input type="submit" class="btn btn-primary" value="Register"/></center></td>
-						<td><button type="reset" class="btn btn-primary">Reset</button></td>
+					<td><input type="submit" class="btn btn-primary" value="Register" onClick="Validate();"/>
+						<button type="reset" class="btn btn-primary">Reset</button></td>
 					</tr>
 			</table>		
 			
 </form:form>
 
+<hr>
 
+  <font face="trebuchet ms"><center>Already a member?</center></font><br>
+            <center><input type="button" class="btn btn-primary" class="btn btn-info" value="Click here to SignIn" onclick="location.href = '/frontend/login1';"></center>
 	</div>
  
-
 
 	<script> $(document).ready(function () {
     $('.forgot-pass').click(function(event) {
@@ -306,9 +263,83 @@ width:100%;}
     $('.pass-reset-submit').click(function(event) {
       $(".pr-wrap").removeClass("show-pass-reset");
     }); 
-});</script>
+    });</script>
+    
+    <script>var myInput = document.getElementById("psw");
+    var letter = document.getElementById("letter");
+    var capital = document.getElementById("capital");
+    var number = document.getElementById("number");
+    var length = document.getElementById("length");
 
+    // When the user clicks on the password field, show the message box
+    myInput.onfocus = function() {
+        document.getElementById("message").style.display = "block";
+    }
 
-	<%-- <%@include file="footer.jsp"%> --%>
+    // When the user clicks outside of the password field, hide the message box
+    myInput.onblur = function() {
+        document.getElementById("message").style.display = "none";
+    }
+
+    // When the user starts to type something inside the password field
+    myInput.onkeyup = function() {
+      // Validate lowercase letters
+      var lowerCaseLetters = /[a-z]/g;
+      if(myInput.value.match(lowerCaseLetters)) {  
+        letter.classList.remove("invalid");
+        letter.classList.add("valid");
+      } else {
+        letter.classList.remove("valid");
+        letter.classList.add("invalid");
+      }
+      
+      // Validate capital letters
+      var upperCaseLetters = /[A-Z]/g;
+      if(myInput.value.match(upperCaseLetters)) {  
+        capital.classList.remove("invalid");
+        capital.classList.add("valid");
+      } else {
+        capital.classList.remove("valid");
+        capital.classList.add("invalid");
+      }
+
+      // Validate numbers
+      var numbers = /[0-9]/g;
+      if(myInput.value.match(numbers)) {  
+        number.classList.remove("invalid");
+        number.classList.add("valid");
+      } else {
+        number.classList.remove("valid");
+        number.classList.add("invalid");
+      }
+      
+      // Validate length
+      if(myInput.value.length >= 8) {
+        length.classList.remove("invalid");
+        length.classList.add("valid");
+      } else {
+        length.classList.remove("valid");
+        length.classList.add("invalid");
+      }
+    }</script>
+    
+     <script>var password = document.getElementById("password")
+     , confirm_password = document.getElementById("confirm_password");
+
+     function validatePassword(){
+       if(password.value != confirm_password.value) {
+         confirm_password.setCustomValidity("Passwords Don't Match");
+       } else {
+         confirm_password.setCustomValidity('');
+       }
+     }
+
+     password.onchange = validatePassword;
+     confirm_password.onkeyup = validatePassword;  </script>
+
+<br>
+ <br>
+
+	 <%@include file="footer.jsp"%>
 </body>
 </html>

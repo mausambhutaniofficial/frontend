@@ -64,18 +64,51 @@ span.glyphicon {
 
 
 
-                                   </style> 
+                                   </style>
+                                   
+                                                                  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- <script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+ -->                                    
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
  <br>
-   
-
-
-
- <c:forEach items="${productList}" var="product">
+    
+<!-- <ul class="nav navbar-nav navbar-left">
+				<form class="form-inline mt-2 mt-md-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+			</ul>
+-->
+<script>
+	$(document).ready(function() {
+		var searchCondition = '${searchCondition}';
+		$('.table').DataTable({
+			"lengthMenu" : [ [  5, 7, -1 ], [  5, 7, "All" ] ],
+			"oSearch" : {
+				"sSearch" : searchCondition
+			}
+		})
+	});
+</script>
  
+<br><br>
+ <c:forEach items="${productList}" var="product">
+ <table id="myTable">
  <div class="container">    
+		<tr>
 		<div class="row">
 			<div class="col-md-12">				
 				<div class="panel panel-default  panel--styled">
@@ -112,10 +145,10 @@ span.glyphicon {
 							<div class="col-md-4 text-center">
 								<%-- <button class="btn btn-lg btn-add-to-cart" href="<c:url value='frontend/totalProductInfo/${product.prodId}'/>">View Now! </button> --%> 						
 								
-								<input type="button"class="btn btn-lg btn-add-to-cart" class="btn btn-info" value="View Now!" onclick="location.href = 'totalProductInfo/${product.prodId}';">
+								<input type="button"class="btn btn-lg btn-add-to-cart" class="btn btn-info" value="View Now!" onclick="location.href = '/frontend/totalProductInfo/${product.prodId}';">
 							</div>
 							<div class="col-md-4 text-left">
-								 <span class="itemPrice">&#8377; ${product.price}</span></h5>
+							<h5>	 <span class="itemPrice">&#8377; ${product.price}</span></h5>
 							</div>
 							<div class="col-md-4">
 								<div class="stars">
@@ -127,8 +160,11 @@ span.glyphicon {
 				</div>
 			</div>
 		</div>
+		</tr>
     </div>
-<script>
+   </tbody> </table>
+   
+ <script>
 var __slice = [].slice;
 
 (function($, window) {
@@ -244,5 +280,7 @@ $( document ).ready(function() {
   });
 });</script> 
  </c:forEach>
+ 
+ <%@include file="footer.jsp" %>
 </body>
 </html>
