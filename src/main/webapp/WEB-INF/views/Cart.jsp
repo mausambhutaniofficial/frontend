@@ -166,7 +166,7 @@ table tr th {
                     </div>
                 </div>
                 </div>
-                <a href="<c:url value="/Productdisplay"/>" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left"></span>&nbsp;Continue Shopping</a>
+                <a href="<c:url value="/Productdisplay"/>" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-arrow-left" ></span>&nbsp;Continue Shopping</a>
                 <a href="<c:url value="/checkout"/>" class="btn btn-primary pull-right">Next<span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
             </c:if>  

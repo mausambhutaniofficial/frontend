@@ -98,7 +98,7 @@
 <form action="InsertCatgory" method="post" enctype="multipart/form-data">
 
 
-<table m.addAttribute("flag",flag);
+<table m.addAttribute("flag",flag); class="table table-hover" id="dev-table">
 <div class="col-md-12">
 				<div class="panel panel-success">
 					<div class="panel-heading">
@@ -110,7 +110,7 @@
 					<div class="panel-body">
 						 
 					</div>
-					<table class="table table-hover" id="dev-table">
+					
 						
 						<tbody>
 						

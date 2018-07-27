@@ -1,7 +1,13 @@
 <%@ page language="java" contentType="text/html" %>
 <%@include file="Header.jsp" %>
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-<style>body{margin-top:20px;}
+
+
+<style>
+
+body{margin-top:20px;}
 .text-danger strong {
         	color: #9f181c;
 		}
@@ -204,9 +210,9 @@
                     
                         <tr>
                             <td class="col-md-6">${cartItem.prodName}</td>
-                            <td class="col-md-2"><i class="fa fa-inr"></i> ${cartItem.quantity }</td>
-                            <td class="col-md-2"><i class="fa fa-inr"></i> ${cartItem.price }</td>
-                             <td class="col-md-2"><i class="fa fa-inr"></i>${cartItem.quantity * cartItem.price }</td>
+                            <td class="col-md-2">${cartItem.quantity }</td>
+                            <td class="col-md-2">&#8377;${cartItem.price }</td>
+                             <td class="col-md-2">&#8377;${cartItem.quantity * cartItem.price }</td>
                         </tr>
                     
                            </form>
@@ -261,7 +267,7 @@
 					
 					<div class="col-md-12 text-right">						
 						<form>
-							<input type="button" value="Print this page" onClick="window.print()">
+					<input type="button" class="btn btn-info" value="Print this page" onClick="window.print()">
 						</form>
 
 					</div>
