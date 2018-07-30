@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html" %>
-<%@include file="Header.jsp" %>
+<%@include file="header1.jsp" %>
 <%@ page isELIgnored="false" %>
 <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <title>Supplier </title>
@@ -112,7 +112,7 @@
 <c:if test="${!flag}">
 <form action="InsertSupplier" method="post" enctype="multipart/form-data">
 
-<table m.addAttribute("flag",flag);class="table table-hover" id="dev-table">
+<table m.addAttribute("flag",flag); class="table table-hover" id="dev-table">>
 
 <div class="col-md-12">
 				<div class="panel panel-success">

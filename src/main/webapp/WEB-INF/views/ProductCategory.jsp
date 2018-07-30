@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html"%>
-<%@include file="Header.jsp"%>
+<%@include file="Header.jsp" %>
 <style>
 
 .img-cart {
